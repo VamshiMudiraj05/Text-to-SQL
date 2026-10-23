@@ -1,6 +1,6 @@
-# 🗺️ 30-Day Engineering Roadmap: CloudTelemetry: High-Performance Distributed Metrics & Tracing Agent
+# 🗺️ 30-Day Engineering Roadmap: ClarifySQL: Text-to-SQL with a Clarification Engine
 
-> **Project Objective:** A production-grade, lightweight distributed telemetry ingestion and metrics aggregation engine with real-time alerting, timeseries persistence, and interactive dashboard.
+> **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 18:00 (Asia/Kolkata)
 > **Overall Progress:** 1/30 Days Completed (3.3%)
 
@@ -20,345 +20,348 @@
 
 ### Phase 1: Foundation
 
-#### Day 01: Project Architecture, Scaffolding, and Environment Validation — ✅ Completed
-- **Description:** Analyze telemetry ingestion requirements, establish modular workspace layout, and define project contracts.
+#### Day 01: Requirements, Acceptance Criteria, Architecture, and Synthetic Database Domain — ✅ Completed
+- **Description:** Define ClarifySQL system requirements, architecture specifications, and synthetic e-commerce database schema contracts.
 - **Complexity:** `Low` | **Dependencies:** `None`
 - **Acceptance Criteria:**
-  - [x] Establish clean directory structure and package exports
-  - [x] Validate Python runtime and dependency isolation
-  - [x] Set up baseline documentation and architecture design record
+  - [x] Specify schema entity-relationship model (customers, orders, products, order_items)
+  - [x] Document clarification engine state machine and ambiguity trigger thresholds
+  - [x] Define read-only safety guardrails, timeouts, and AST validation specifications
 - **Key Deliverables:**
-  - `src/core/__init__.py`
-  - `src/models/__init__.py`
-  - `tests/__init__.py`
   - `docs/architecture.md`
+  - `docs/requirements.md`
+  - `docs/domain_schema.md`
 
-#### Day 02: Telemetry Data Models, Schema Validation, and Envelope Types — ⚪ Planned
-- **Description:** Implement strongly-typed metrics schemas (Counter, Gauge, Histogram, Summary) with serialization support.
+#### Day 02: Project Scaffolding, Python/FastAPI Environment, PostgreSQL Config, and React Layout — ⚪ Planned
+- **Description:** Initialize backend project layout with FastAPI and Pydantic v2, PostgreSQL connection driver, and React frontend scaffolding.
 - **Complexity:** `Low` | **Dependencies:** `task-day-01`
 - **Acceptance Criteria:**
-  - [ ] MetricEvent and MetricBatch schemas defined with type annotations
-  - [ ] Nanosecond-precision timestamping and tags dictionary validation
-  - [ ] Serialization to JSON and binary format validated with unit tests
+  - [ ] FastAPI application skeleton with structured config management
+  - [ ] Pydantic v2 settings loading database credentials from environment
+  - [ ] React frontend scaffolding initialized with Tailwind CSS configuration
 - **Key Deliverables:**
-  - `src/models/metrics.py`
-  - `tests/test_metrics_model.py`
+  - `src/core/config.py`
+  - `src/main.py`
+  - `frontend/package.json`
+  - `frontend/src/App.tsx`
 
-#### Day 03: High-Throughput In-Memory Ring Buffer & Sliding Window — ⚪ Planned
-- **Description:** Implement thread-safe, lock-free ring buffer for zero-allocation telemetry sample queuing.
+#### Day 03: Synthetic Database Domain: Customers, Orders, Products, and Realistic Seed Data — ⚪ Planned
+- **Description:** Create relational schemas for customers, products, orders, and order_items with realistic sample data for text-to-sql evaluation.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-02`
 - **Acceptance Criteria:**
-  - [ ] Lock-free or mutex-guarded bounded circular buffer implemented
-  - [ ] Buffer drops or backpressure signals handled correctly on overflow
-  - [ ] Unit tests verifying FIFO order under high concurrency
+  - [ ] SQLAlchemy models defined with primary keys, foreign keys, and indexes
+  - [ ] Synthetic seed generator populates realistic customers, products, orders, and line items
+  - [ ] Unit test verifies relational integrity and seed data consistency
 - **Key Deliverables:**
-  - `src/core/ring_buffer.py`
-  - `tests/test_ring_buffer.py`
+  - `src/db/models.py`
+  - `src/db/seed_data.py`
+  - `tests/test_seed_data.py`
 
-#### Day 04: Persistent Timeseries Storage Adapter (SQLite & WAL Engine) — ⚪ Planned
-- **Description:** Build ACID-compliant local timeseries persistence adapter with indexing on metric name, timestamp, and host.
+#### Day 04: Database Connection Management, Session Pooling, and Schema Introspection — ⚪ Planned
+- **Description:** Implement robust database session management and automatic schema reflection extracting table names, columns, and data types.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-03`
 - **Acceptance Criteria:**
-  - [ ] SQLite schema with timeseries chunking and WAL mode enabled
-  - [ ] Batch insertion method achieving >10,000 events/sec
-  - [ ] Query interface filtering by timerange and tag keys
+  - [ ] Thread-safe engine pool with read-only execution session factory
+  - [ ] Schema introspector extracts tables, columns, foreign keys, and sample distinct values
+  - [ ] Tests verify schema reflection accurately matches database catalog
 - **Key Deliverables:**
-  - `src/storage/sqlite_adapter.py`
-  - `tests/test_storage_adapter.py`
+  - `src/db/connection.py`
+  - `src/db/introspector.py`
+  - `tests/test_introspector.py`
 
-#### Day 05: Automated Health Checks, Logging Subsystem, and Baseline Suite — ⚪ Planned
-- **Description:** Add structured JSON logging, system diagnostics, and automated baseline test execution.
-- **Complexity:** `Medium` | **Dependencies:** `task-day-04`
+#### Day 05: Backend Configuration Validation, Health Endpoints, and Baseline Test Suite — ⚪ Planned
+- **Description:** Add comprehensive health check endpoints, configuration sanity checks, and automated baseline pytest suite.
+- **Complexity:** `Low` | **Dependencies:** `task-day-04`
 - **Acceptance Criteria:**
-  - [ ] Diagnostic health check verifies disk space, buffer status, and DB connection
-  - [ ] Configurable JSON logger with correlation IDs
-  - [ ] Pytest suite achieves 100% pass on Phase 1 modules
+  - [ ] GET /health endpoint reporting database ping latency and schema readiness
+  - [ ] Configuration validator checking model API keys and connection parameters
+  - [ ] Pytest suite executes and passes 100% on Phase 1 modules
 - **Key Deliverables:**
-  - `src/core/diagnostics.py`
-  - `src/core/logger.py`
-  - `tests/test_diagnostics.py`
+  - `src/api/health.py`
+  - `tests/test_health.py`
+  - `tests/test_config.py`
 
 ### Phase 2: Core Functionality
 
-#### Day 06: Asynchronous HTTP & REST Ingestion Endpoints — ⚪ Planned
-- **Description:** Implement lightweight HTTP endpoint receiving metric batch payloads with gzip decompression support.
+#### Day 06: LLM Provider Interface and Structured Response Schemas — ⚪ Planned
+- **Description:** Implement pluggable LLM provider abstraction supporting Gemini and OpenAI with structured JSON response schemas.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-05`
 - **Acceptance Criteria:**
-  - [ ] HTTP handler accepts POST /api/v1/metrics payload
-  - [ ] Validates bearer token and rejects malformed payloads with 400 Bad Request
-  - [ ] Integration tests verify end-to-end ingestion pipeline
+  - [ ] Pydantic models for SQLGenerationResponse, AmbiguityCheck, and ClarificationPrompt
+  - [ ] Gemini and OpenAI provider implementations with exponential backoff
+  - [ ] Unit tests verifying JSON response parsing and schema conformance
 - **Key Deliverables:**
-  - `src/ingestion/http_server.py`
-  - `tests/test_http_ingestion.py`
+  - `src/llm/provider.py`
+  - `src/llm/schemas.py`
+  - `tests/test_llm_provider.py`
 
-#### Day 07: Streaming Metrics Aggregator (Quantiles & Percentiles) — ⚪ Planned
-- **Description:** Implement t-digest or P2 quantile estimator for calculating accurate P50, P90, P99 latencies on the fly.
+#### Day 07: Schema-Aware SQL Generation Engine — ⚪ Planned
+- **Description:** Build prompt synthesis pipeline injecting introspected database schema, foreign keys, and constraints into LLM context.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-06`
 - **Acceptance Criteria:**
-  - [ ] Streaming quantile estimator calculates P50, P90, P99 within 1% error margin
-  - [ ] Windowed downsampling aggregations for 1m, 5m, and 1h intervals
-  - [ ] Unit tests compare calculated percentiles with exact distributions
+  - [ ] Dynamic prompt builder formatting schema catalog into compact model context
+  - [ ] Generates standard SQL queries adhering to database dialect without hallucinations
+  - [ ] Unit tests verifying correct table joins on multi-table queries
 - **Key Deliverables:**
-  - `src/aggregation/quantiles.py`
-  - `tests/test_quantiles.py`
+  - `src/engine/sql_generator.py`
+  - `tests/test_sql_generator.py`
 
-#### Day 08: Prometheus Exporter & OpenTelemetry Protocol Adapter — ⚪ Planned
-- **Description:** Expose /metrics endpoint formatted according to Prometheus text-based exposition format.
-- **Complexity:** `Medium` | **Dependencies:** `task-day-07`
+#### Day 08: SQL Parsing, Read-Only Query Validation, and Query Limits — ⚪ Planned
+- **Description:** Implement strict AST-based SQL validator enforcing read-only SELECT/CTE queries and blocking DDL/DML.
+- **Complexity:** `High` | **Dependencies:** `task-day-07`
 - **Acceptance Criteria:**
-  - [ ] Prometheus exposition format serializer correctly formats HELP and TYPE lines
-  - [ ] OpenTelemetry metric mapping converts OTLP samples to internal representation
-  - [ ] Verified scraper compatibility via automated tests
+  - [ ] SQL AST parser rejects INSERT, UPDATE, DELETE, DROP, ALTER, TRUNCATE
+  - [ ] Blocks stacked queries, dangerous functions, and unauthorized system tables
+  - [ ] Enforces statement limit (LIMIT 100) and query complexity checks
 - **Key Deliverables:**
-  - `src/exporters/prometheus.py`
-  - `tests/test_prometheus_exporter.py`
+  - `src/security/sql_guard.py`
+  - `tests/test_sql_guard.py`
 
-#### Day 09: Dynamic Tag Filtering & Dimensional Indexing — ⚪ Planned
-- **Description:** Build fast in-memory inverted index for multi-dimensional label querying (e.g., service=auth AND env=prod).
+#### Day 09: Safe Query Execution Engine and Tabular Result Serialization — ⚪ Planned
+- **Description:** Execute validated queries under statement timeouts, serialize results to JSON tables, and compute column metadata.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-08`
 - **Acceptance Criteria:**
-  - [ ] Inverted index maps tag key-value pairs to metric series identifiers
-  - [ ] Intersection and union query operations execute in sub-millisecond time
-  - [ ] Property-based tests confirm index consistency
+  - [ ] Read-only database transaction execution with strict timeout (5 seconds)
+  - [ ] Serializes rows and columns into JSON table structure with row count and duration
+  - [ ] Error interceptor converting database exceptions into readable user messages
 - **Key Deliverables:**
-  - `src/storage/tag_index.py`
-  - `tests/test_tag_index.py`
+  - `src/engine/query_executor.py`
+  - `tests/test_query_executor.py`
 
-#### Day 10: API Authentication, Token Rotation, and Rate Limiting — ⚪ Planned
-- **Description:** Implement token-bucket rate limiter and HMAC signature verification for secure client access.
+#### Day 10: Test Clear Questions, Invalid Queries, and Unsupported Requests — ⚪ Planned
+- **Description:** Build rigorous test suite covering unambiguous questions, syntactic errors, and out-of-domain requests.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-09`
 - **Acceptance Criteria:**
-  - [ ] Token bucket rate limiter prevents client ingestion starvation
-  - [ ] HMAC SHA-256 header verification for payload integrity
-  - [ ] Security test cases verifying rejection of expired or forged tokens
+  - [ ] End-to-end tests for simple and aggregated clear questions (e.g. 'total sales in 2024')
+  - [ ] Tests verifying rejection of malicious queries like 'DROP TABLE customers'
+  - [ ] Negative tests handling unsupported queries with graceful error responses
 - **Key Deliverables:**
-  - `src/security/auth.py`
-  - `src/security/rate_limiter.py`
-  - `tests/test_security_auth.py`
+  - `tests/test_clear_questions.py`
+  - `tests/test_security_rejection.py`
 
-#### Day 11: Timeseries Query Engine & DSL Parsing — ⚪ Planned
-- **Description:** Implement query parser supporting rate(), sum_by(), and delta() expressions over stored metrics.
+#### Day 11: Ambiguity Detection and Clarification-State Models — ⚪ Planned
+- **Description:** Implement ambiguity analyzer detecting underspecified metrics, missing time ranges, or multiple ranking criteria.
 - **Complexity:** `High` | **Dependencies:** `task-day-10`
 - **Acceptance Criteria:**
-  - [ ] Lexer and parser for metric aggregation expressions
-  - [ ] Execution engine evaluates expressions against timeseries storage
-  - [ ] End-to-end query tests validating calculation correctness
+  - [ ] Ambiguity classifier determining if question requires user clarification
+  - [ ] Identifies specific ambiguity type: ranking criteria, date range, entity filter
+  - [ ] Tests verify clear questions are not unnecessarily flagged as ambiguous
 - **Key Deliverables:**
-  - `src/query/engine.py`
-  - `src/query/parser.py`
-  - `tests/test_query_engine.py`
+  - `src/engine/ambiguity_detector.py`
+  - `tests/test_ambiguity_detector.py`
 
-#### Day 12: Phase 2 Integration Verification & End-to-End Test Suite — ⚪ Planned
-- **Description:** Comprehensive integration of ingestion, aggregation, storage, and querying pipelines.
-- **Complexity:** `High` | **Dependencies:** `task-day-11`
+#### Day 12: Targeted Clarification Question Generator with Selectable Options — ⚪ Planned
+- **Description:** Generate one concise, targeted clarification question with 2-4 distinct selectable options when ambiguity is detected.
+- **Complexity:** `Medium` | **Dependencies:** `task-day-11`
 - **Acceptance Criteria:**
-  - [ ] Automated integration test simulates 5 concurrent producers pushing 50,000 metrics
-  - [ ] Metrics verify queryable with accurate P99 latencies within 50ms
-  - [ ] Zero data loss under controlled throughput
+  - [ ] Clarification generator outputs clear question and structured choice options
+  - [ ] Example: 'Show top customers' -> choices: Total Spending, Order Count, Recent Activity
+  - [ ] Tests confirm concise wording and mutually exclusive options
 - **Key Deliverables:**
-  - `tests/test_phase2_integration.py`
+  - `src/engine/clarification_generator.py`
+  - `tests/test_clarification_generator.py`
 
-### Phase 3: Advanced Features
+### Phase 3: Clarification & State
 
-#### Day 13: Dynamic Threshold Alerting Rule Engine — ⚪ Planned
-- **Description:** Build background evaluation loop checking metric thresholds (e.g. error_rate > 5% for 3 consecutive minutes).
+#### Day 13: Conversation State Manager Preserving Clarification Turns — ⚪ Planned
+- **Description:** Build stateful conversation store preserving original user question, detected ambiguities, and user answers.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-12`
 - **Acceptance Criteria:**
-  - [ ] AlertRule schema supporting condition types (> , < , delta, absent)
-  - [ ] Stateful rule evaluator tracks pending, firing, and resolved alert states
-  - [ ] Tests verify alert state transitions without flapping
+  - [ ] Session state store caching multi-turn dialogue history with TTL cleanup
+  - [ ] ConversationTurn model linking question, clarification options, and selection
+  - [ ] Integration tests verifying conversation state persistence across turns
 - **Key Deliverables:**
-  - `src/alerts/rule_engine.py`
-  - `tests/test_alert_rules.py`
+  - `src/engine/conversation.py`
+  - `tests/test_conversation.py`
 
-#### Day 14: Multi-Channel Notification Dispatcher (Webhook & Email) — ⚪ Planned
-- **Description:** Implement retry-safe notification dispatcher sending alerts to Slack, Discord webhooks, and SMTP email.
+#### Day 14: Clarification-Informed SQL Regeneration — ⚪ Planned
+- **Description:** Incorporate user clarification choice into the SQL generator prompt to produce accurate, tailored queries.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-13`
 - **Acceptance Criteria:**
-  - [ ] Webhook dispatcher formats rich payloads with severity badges and runbooks
-  - [ ] Exponential backoff retry with dead-letter queue for failed deliveries
-  - [ ] Mocked integration tests for webhook and email channels
+  - [ ] Prompt pipeline augments schema and original question with selected clarification
+  - [ ] Generates refined SQL directly matching the clarified user intent
+  - [ ] Tests verify generated SQL reflects the clarified metric (e.g. SUM(total_amount))
 - **Key Deliverables:**
-  - `src/alerts/dispatcher.py`
-  - `tests/test_dispatcher.py`
+  - `src/engine/sql_regenerator.py`
+  - `tests/test_sql_regenerator.py`
 
-#### Day 15: Real-Time Anomaly Detection via Moving Z-Score & Holt-Winters — ⚪ Planned
-- **Description:** Implement statistical anomaly detector flagging outliers based on rolling standard deviations.
-- **Complexity:** `High` | **Dependencies:** `task-day-14`
+#### Day 15: Test Suite for Ambiguous, Underspecified, and Clear Questions — ⚪ Planned
+- **Description:** Comprehensive automated test matrix asserting correct routing between direct execution and clarification flow.
+- **Complexity:** `Medium` | **Dependencies:** `task-day-14`
 - **Acceptance Criteria:**
-  - [ ] Rolling Z-Score algorithm identifies sudden metric spikes and drops
-  - [ ] Configurable sensitivity threshold and warmup period
-  - [ ] Benchmark tests with synthetic noisy timeseries
+  - [ ] Tests asserting clarification triggers on underspecified ranking requests
+  - [ ] Tests asserting direct execution on fully specified date-filtered queries
+  - [ ] Verification that default assumptions are explicitly documented when no clarification is needed
 - **Key Deliverables:**
-  - `src/analytics/anomaly_detector.py`
-  - `tests/test_anomaly_detector.py`
+  - `tests/test_clarification_workflow.py`
 
-#### Day 16: Terminal UI & Interactive CLI Dashboard — ⚪ Planned
-- **Description:** Build interactive command-line dashboard displaying real-time ingestion throughput, memory, and top metrics.
+#### Day 16: React Chat Interface and Question Submission Workflow — ⚪ Planned
+- **Description:** Build modern, responsive React chat interface with Tailwind CSS for natural language question input.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-15`
 - **Acceptance Criteria:**
-  - [ ] Click-based CLI command `telemetry top` and `telemetry query`
-  - [ ] ASCII sparklines and status tables for live terminal monitoring
-  - [ ] CLI integration tests with Click test runner
+  - [ ] Clean chat message timeline supporting user questions and assistant responses
+  - [ ] Input box with auto-focus, send button, and keyboard shortcut (Enter)
+  - [ ] Component tests asserting input handling and loading state transitions
 - **Key Deliverables:**
-  - `src/cli/dashboard.py`
-  - `tests/test_cli_dashboard.py`
+  - `frontend/src/components/ChatTimeline.tsx`
+  - `frontend/src/components/QuestionInput.tsx`
 
-#### Day 17: Distributed Tracing Context Propagation (W3C TraceContext) — ⚪ Planned
-- **Description:** Add distributed tracing context injection and extraction conforming to W3C TraceContext spec.
+#### Day 17: Interactive Clarification Option Controls and Turn History — ⚪ Planned
+- **Description:** Render clickable clarification option buttons within the chat stream allowing 1-click option selection.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-16`
 - **Acceptance Criteria:**
-  - [ ] Traceparent and tracestate header parsing and generation
-  - [ ] Span model supporting parent-child relationships and span attributes
-  - [ ] Unit tests verifying trace propagation across synthetic boundaries
+  - [ ] ClarificationCard component rendering option pills/buttons for user selection
+  - [ ] Disables choices once answered and updates conversation timeline seamlessly
+  - [ ] Frontend interaction tests verifying choice submission callback
 - **Key Deliverables:**
-  - `src/tracing/context.py`
-  - `src/tracing/span.py`
-  - `tests/test_tracing.py`
+  - `frontend/src/components/ClarificationCard.tsx`
+  - `frontend/src/components/HistorySidebar.tsx`
 
-#### Day 18: Timeseries Data Compression & Retention Pruner — ⚪ Planned
-- **Description:** Implement Gorilla double-delta timestamp and XOR floating-point compression to reduce disk usage by 70%.
-- **Complexity:** `High` | **Dependencies:** `task-day-17`
+#### Day 18: SQL Preview Modal, Plain-English Explanations, and Tabular Results — ⚪ Planned
+- **Description:** Display formatted SQL preview with syntax highlighting, plain-English explanation, and interactive data table.
+- **Complexity:** `Medium` | **Dependencies:** `task-day-17`
 - **Acceptance Criteria:**
-  - [ ] Double-delta timestamp compression algorithm implemented
-  - [ ] Automated TTL pruning job removes raw samples older than configured retention
-  - [ ] Compression tests verify exact floating-point recovery
+  - [ ] SqlPreview component with copy-to-clipboard and syntax highlighting
+  - [ ] QueryExplanation card detailing why the query was constructed that way
+  - [ ] ResultTable component with pagination, sortable columns, and row counts
 - **Key Deliverables:**
-  - `src/storage/compression.py`
-  - `src/storage/retention.py`
-  - `tests/test_compression.py`
+  - `frontend/src/components/SqlPreview.tsx`
+  - `frontend/src/components/ResultTable.tsx`
 
-#### Day 19: Phase 3 Advanced Feature Integration & Stress Benchmark — ⚪ Planned
-- **Description:** Integrated stress run combining alerting, anomaly detection, tracing, and compression.
-- **Complexity:** `High` | **Dependencies:** `task-day-18`
+#### Day 19: Responsive UI Polish, Skeleton Loading States, and Error Banners — ⚪ Planned
+- **Description:** Implement polished dark-mode styling, loading skeletons during SQL execution, and actionable error toasts.
+- **Complexity:** `Low` | **Dependencies:** `task-day-18`
 - **Acceptance Criteria:**
-  - [ ] Load generator executes 100k samples with embedded anomalies
-  - [ ] Anomaly detector alerts fire correctly and trigger dispatchers
-  - [ ] No memory leaks detected across 10-minute continuous run
+  - [ ] Skeleton placeholders for SQL generation and data table loading states
+  - [ ] Error banner explaining syntax or security policy rejections clearly
+  - [ ] Responsive mobile-friendly drawer and desktop side-by-side view
 - **Key Deliverables:**
-  - `tests/test_phase3_advanced_e2e.py`
+  - `frontend/src/components/ErrorBanner.tsx`
+  - `frontend/src/components/LoadingSkeleton.tsx`
 
-### Phase 4: Reliability and Polish
+### Phase 4: Evaluation, Hardening & Integration
 
-#### Day 20: Comprehensive Edge-Case Testing & Fuzz Testing — ⚪ Planned
-- **Description:** Subject parsers, serializers, and buffers to fuzzed inputs, corrupted packets, and extreme values.
-- **Complexity:** `Medium` | **Dependencies:** `task-day-19`
+#### Day 20: Full Frontend-Backend API Integration and User Journey Test — ⚪ Planned
+- **Description:** Connect React frontend with FastAPI backend endpoints over HTTP and test complete clarification journey.
+- **Complexity:** `High` | **Dependencies:** `task-day-19`
 - **Acceptance Criteria:**
-  - [ ] Fuzz testing harness with NaN, Inf, empty payloads, and huge tags
-  - [ ] Defensive boundary validation prevents unhandled exceptions or crashes
-  - [ ] All fuzzer tests integrated into regular pytest suite
+  - [ ] POST /api/v1/query endpoint handling initial question, ambiguity, and clarification
+  - [ ] End-to-end integration test asserting full question -> clarify -> execute flow
+  - [ ] CORS and API client error handling verified
 - **Key Deliverables:**
-  - `tests/test_fuzz_boundary.py`
+  - `src/api/routes.py`
+  - `tests/test_api_integration.py`
 
-#### Day 21: Concurrency Hardening & Race Condition Elimination — ⚪ Planned
-- **Description:** Audit multithreaded and asynchronous primitives using thread stress tests to verify thread safety.
-- **Complexity:** `High` | **Dependencies:** `task-day-20`
+#### Day 21: Representative Text-to-SQL Benchmark Dataset — ⚪ Planned
+- **Description:** Curate benchmark suite of 50 diverse e-commerce questions across simple, multi-join, ambiguous, and edge cases.
+- **Complexity:** `Medium` | **Dependencies:** `task-day-20`
 - **Acceptance Criteria:**
-  - [ ] Thread-safety stress tests executing 20 concurrent writer threads
-  - [ ] Zero race conditions or data corruption verified under lock profiling
-  - [ ] Documented concurrency guidelines
+  - [ ] Benchmark dataset JSON containing questions, expected tables, and golden SQL
+  - [ ] Categories covering simple lookups, aggregations, multi-table joins, and ambiguous prompts
+  - [ ] Automated dataset loader and test runner
 - **Key Deliverables:**
-  - `tests/test_concurrency.py`
+  - `benchmarks/dataset.json`
+  - `benchmarks/evaluator.py`
 
-#### Day 22: Database Query Optimization & WAL Checkpointing — ⚪ Planned
-- **Description:** Optimize SQLite indexes, implement automated PRAGMA optimize, and tune WAL checkpoint intervals.
-- **Complexity:** `Medium` | **Dependencies:** `task-day-21`
+#### Day 22: Execution Accuracy and Clarification Effectiveness Measurement — ⚪ Planned
+- **Description:** Run automated evaluation computing exact-match accuracy, execution accuracy, and ambiguity recall.
+- **Complexity:** `High` | **Dependencies:** `task-day-21`
 - **Acceptance Criteria:**
-  - [ ] Database query latency reduced by >40% on historical timerange scans
-  - [ ] Scheduled WAL auto-checkpointing prevents unbounded WAL file growth
-  - [ ] Benchmark tests asserting sub-10ms query times on 1M rows
+  - [ ] Evaluation script calculates execution accuracy (% of queries producing identical results)
+  - [ ] Measures clarification precision: does the engine ask questions only when needed?
+  - [ ] Generates benchmark evaluation report in Markdown
 - **Key Deliverables:**
-  - `src/storage/sqlite_optimizer.py`
-  - `tests/test_storage_optimization.py`
+  - `benchmarks/run_eval.py`
+  - `reports/evaluation_results.md`
 
-#### Day 23: Circuit Breaker & Graceful Degradation Policy — ⚪ Planned
-- **Description:** Implement circuit breaker pattern for downstream storage and external dispatchers under load.
+#### Day 23: Prompt Engineering Improvements and Failure Analysis — ⚪ Planned
+- **Description:** Analyze failed benchmark questions to refine schema prompts, few-shot examples, and ambiguity triggers.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-22`
 - **Acceptance Criteria:**
-  - [ ] Circuit breaker with CLOSED, OPEN, HALF_OPEN states
-  - [ ] Graceful shedding of non-critical metrics when disk I/O saturates
-  - [ ] Unit tests verifying circuit state transitions and automatic recovery
+  - [ ] Incorporate few-shot representative join examples into generator prompt
+  - [ ] Fine-tune ambiguity detection thresholds to minimize false positive clarifications
+  - [ ] Re-run benchmarks demonstrating measurable accuracy improvement
 - **Key Deliverables:**
-  - `src/core/circuit_breaker.py`
-  - `tests/test_circuit_breaker.py`
+  - `src/engine/prompts.py`
+  - `tests/test_prompt_improvements.py`
 
-#### Day 24: Security Hardening, Dependency Audit, and Secret Scrubbing — ⚪ Planned
-- **Description:** Run dependency vulnerability check, configure secure defaults, and enforce TLS/token validation.
-- **Complexity:** `Low` | **Dependencies:** `task-day-23`
+#### Day 24: Database Security Audit, Parameterization, and Vulnerability Scan — ⚪ Planned
+- **Description:** Audit SQL security rules, enforce parameterized execution for literals, and run dependency audit.
+- **Complexity:** `Medium` | **Dependencies:** `task-day-23`
 - **Acceptance Criteria:**
-  - [ ] Zero high/critical security vulnerabilities in project dependencies
-  - [ ] Internal logs scrub sensitive tokens, passwords, and private IPs
-  - [ ] Automated security test asserts sanitized log output
+  - [ ] Verify parameterization of user-supplied filter constants to prevent SQL injection
+  - [ ] Audit query timeout enforcement preventing Denial-of-Service on heavy scans
+  - [ ] Run security audit verifying zero high/critical vulnerabilities
 - **Key Deliverables:**
   - `src/security/sanitizer.py`
   - `tests/test_security_audit.py`
 
-#### Day 25: Full Regression & 90%+ Test Coverage Audit — ⚪ Planned
-- **Description:** Execute entire test suite across all modules, asserting high branch coverage and clean pass.
+#### Day 25: Full Regression Testing and Defect Resolution — ⚪ Planned
+- **Description:** Execute full regression test suite across backend API, database engine, guardrails, and frontend mocks.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-24`
 - **Acceptance Criteria:**
-  - [ ] Overall project test suite passes 100% cleanly
-  - [ ] All critical packages achieve >90% test coverage
-  - [ ] Generated coverage report and quality audit checklist
+  - [ ] 100% test pass rate across all backend unit and integration test suites
+  - [ ] Resolve all outstanding edge-case defects identified during evaluation
+  - [ ] Produce quality and reliability sign-off checklist
 - **Key Deliverables:**
   - `tests/test_full_regression.py`
   - `reports/quality_audit.md`
 
 ### Phase 5: Release
 
-#### Day 26: Production Configuration Engine & Environment Profiles — ⚪ Planned
-- **Description:** Implement flexible configuration engine supporting dev, staging, and prod environment profiles.
+#### Day 26: Production Deployment Configuration and Environment Setup — ⚪ Planned
+- **Description:** Configure production environment profiles, database connection pooling, and Gunicorn/Uvicorn workers.
 - **Complexity:** `Low` | **Dependencies:** `task-day-25`
 - **Acceptance Criteria:**
-  - [ ] Typed configuration model with hierarchical overriding (file < env < CLI)
-  - [ ] Strict validation with informative error messages for missing required keys
-  - [ ] Config tests verifying environment profiles
+  - [ ] Production settings profile with strict environment variable validation
+  - [ ] Production ASGI server configuration with optimized worker processes
+  - [ ] Configuration tests validating production parameters
 - **Key Deliverables:**
-  - `src/core/profile_config.py`
-  - `tests/test_profile_config.py`
+  - `src/core/prod_config.py`
+  - `tests/test_prod_config.py`
 
-#### Day 27: Containerization & Multi-Arch Dockerfile Configuration — ⚪ Planned
-- **Description:** Create lightweight multi-stage Dockerfile and docker-compose setup for zero-friction deployment.
+#### Day 27: Containerization: Multi-Stage Dockerfile & Docker Compose Pipeline — ⚪ Planned
+- **Description:** Create multi-stage Dockerfile packaging FastAPI backend, React build, and PostgreSQL database service.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-26`
 - **Acceptance Criteria:**
-  - [ ] Multi-stage Dockerfile producing minimal, secure production image (<80MB)
-  - [ ] docker-compose.yml orchestrating collector, Prometheus exporter, and sample app
-  - [ ] Container build and startup verified via automated script
+  - [ ] Multi-stage Dockerfile producing minimal, hardened production container
+  - [ ] docker-compose.yml orchestrating ClarifySQL API, PostgreSQL, and React frontend
+  - [ ] Automated container startup smoke test verifying all services healthy
 - **Key Deliverables:**
   - `Dockerfile`
   - `docker-compose.yml`
   - `.dockerignore`
 
-#### Day 28: End-to-End Production Verification & Smoke Test Suite — ⚪ Planned
-- **Description:** Deploy containerized agent in isolated sandbox and execute automated smoke test suite.
+#### Day 28: End-to-End Production Smoke Testing in Sandbox — ⚪ Planned
+- **Description:** Deploy containerized ClarifySQL stack in isolated sandbox and execute comprehensive smoke test suite.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-27`
 - **Acceptance Criteria:**
-  - [ ] Production sandbox deployment script validates startup within 3 seconds
-  - [ ] Smoke test suite exercises all API endpoints, ingestion, and querying
-  - [ ] Clean shutdown test verifies zero data loss during SIGTERM
+  - [ ] Automated smoke test exercises natural language question, clarification, SQL execution, and table output
+  - [ ] Verifies read-only permission isolation on production database account
+  - [ ] Sandbox health verification passes without warnings
 - **Key Deliverables:**
   - `scripts/smoke_test.py`
   - `tests/test_smoke.py`
 
-#### Day 29: Comprehensive Developer Guide, Architecture Specs, and API Docs — ⚪ Planned
-- **Description:** Write complete documentation covering architecture, REST API references, configuration, and tutorials.
+#### Day 29: Comprehensive Developer Guide, Architecture Specs, and Interactive Demo Guide — ⚪ Planned
+- **Description:** Author complete technical documentation, architecture diagrams, API reference, and demo walk-throughs.
 - **Complexity:** `Low` | **Dependencies:** `task-day-28`
 - **Acceptance Criteria:**
-  - [ ] Comprehensive README.md with architecture diagrams, quickstart, and badges
-  - [ ] Interactive API documentation with curl and Python code samples
-  - [ ] Runbooks for production operations and troubleshooting
+  - [ ] Comprehensive README.md with system architecture diagram and feature highlights
+  - [ ] API documentation covering all REST endpoints with curl examples
+  - [ ] Interactive demo guide with sample ambiguous and clear questions to try
 - **Key Deliverables:**
   - `README.md`
   - `docs/api_reference.md`
-  - `docs/runbook.md`
+  - `docs/demo_guide.md`
 
 #### Day 30: Final Acceptance Audit, Release v1.0.0 Tagging, and 30-Day Retrospective — ⚪ Planned
-- **Description:** Perform final acceptance audit, package distribution artifacts, and publish 30-day milestone summary.
+- **Description:** Conduct final acceptance audit against all requirements, tag v1.0.0 release, and document project achievements.
 - **Complexity:** `Low` | **Dependencies:** `task-day-29`
 - **Acceptance Criteria:**
   - [ ] All 30 daily acceptance criteria verified 100% complete
   - [ ] Changelog and release notes published for v1.0.0
-  - [ ] 30-day project retrospective report generated documenting achievements
+  - [ ] Publish 30-day retrospective report documenting architecture, evaluation, and future roadmap
 - **Key Deliverables:**
   - `CHANGELOG.md`
   - `reports/30_day_retrospective.md`

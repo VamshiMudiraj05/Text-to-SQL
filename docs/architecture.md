@@ -1,11 +1,11 @@
-# Documentation: Project Architecture, Scaffolding, and Environment Validation
+# Documentation: Requirements, Acceptance Criteria, Architecture, and Synthetic Database Domain
 
 **Milestone Day:** 1
 
 ## Overview
-Analyze telemetry ingestion requirements, establish modular workspace layout, and define project contracts.
+Define ClarifySQL system requirements, architecture specifications, and synthetic e-commerce database schema contracts.
 
 ## Acceptance Criteria
-- [x] Establish clean directory structure and package exports
-- [x] Validate Python runtime and dependency isolation
-- [x] Set up baseline documentation and architecture design record
+- [x] Specify schema entity-relationship model (customers, orders, products, order_items)
+- [x] Document clarification engine state machine and ambiguity trigger thresholds
+- [x] Define read-only safety guardrails, timeouts, and AST validation specifications
