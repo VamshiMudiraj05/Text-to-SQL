@@ -1,8 +1,8 @@
 # 🗺️ 30-Day Engineering Roadmap: ClarifySQL: Text-to-SQL with a Clarification Engine
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
-> **Start Date:** 2026-10-24 | **Schedule:** Daily at 18:00 (Asia/Kolkata)
-> **Overall Progress:** 2/30 Days Completed (6.7%)
+> **Start Date:** 2026-10-24 | **Schedule:** Daily at 00:00 (Asia/Kolkata)
+> **Overall Progress:** 3/30 Days Completed (10.0%)
 
 ## 📊 Progress Overview
 
@@ -32,7 +32,7 @@
   - `docs/requirements.md`
   - `docs/domain_schema.md`
 
-#### Day 02: Project Scaffolding, Python/FastAPI Environment, PostgreSQL Config, and React Layout — ✅ Completed
+#### Day 02: Project Scaffolding, Python/FastAPI Environment, PostgreSQL Config, and React Layout — ✅ Completed (`41910da`)
 - **Description:** Initialize backend project layout with FastAPI and Pydantic v2, PostgreSQL connection driver, and React frontend scaffolding.
 - **Complexity:** `Low` | **Dependencies:** `task-day-01`
 - **Acceptance Criteria:**
@@ -45,13 +45,13 @@
   - `frontend/package.json`
   - `frontend/src/App.tsx`
 
-#### Day 03: Synthetic Database Domain: Customers, Orders, Products, and Realistic Seed Data — ⚪ Planned
+#### Day 03: Synthetic Database Domain: Customers, Orders, Products, and Realistic Seed Data — ✅ Completed
 - **Description:** Create relational schemas for customers, products, orders, and order_items with realistic sample data for text-to-sql evaluation.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-02`
 - **Acceptance Criteria:**
-  - [ ] SQLAlchemy models defined with primary keys, foreign keys, and indexes
-  - [ ] Synthetic seed generator populates realistic customers, products, orders, and line items
-  - [ ] Unit test verifies relational integrity and seed data consistency
+  - [x] SQLAlchemy models defined with primary keys, foreign keys, and indexes
+  - [x] Synthetic seed generator populates realistic customers, products, orders, and line items
+  - [x] Unit test verifies relational integrity and seed data consistency
 - **Key Deliverables:**
   - `src/db/models.py`
   - `src/db/seed_data.py`
