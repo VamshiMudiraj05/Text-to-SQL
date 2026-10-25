@@ -8,3 +8,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `14cbd0e7`
 - **Summary:** Create relational schemas for customers, products, orders, and order_items with realistic sample data for text-to-sql evaluation.
+
+### Day 04 — Database Connection Management, Session Pooling, and Schema Introspection (2026-10-25)
+
+- **Commit:** `1f9360db`
+- **Summary:** Implement robust database session management and automatic schema reflection extracting table names, columns, and data types.
