@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 00:00 (Asia/Kolkata)
-> **Overall Progress:** 3/30 Days Completed (10.0%)
+> **Overall Progress:** 4/30 Days Completed (13.3%)
 
 ## 📊 Progress Overview
 
@@ -45,7 +45,7 @@
   - `frontend/package.json`
   - `frontend/src/App.tsx`
 
-#### Day 03: Synthetic Database Domain: Customers, Orders, Products, and Realistic Seed Data — ✅ Completed
+#### Day 03: Synthetic Database Domain: Customers, Orders, Products, and Realistic Seed Data — ✅ Completed (`0abee59`)
 - **Description:** Create relational schemas for customers, products, orders, and order_items with realistic sample data for text-to-sql evaluation.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-02`
 - **Acceptance Criteria:**
@@ -57,13 +57,13 @@
   - `src/db/seed_data.py`
   - `tests/test_seed_data.py`
 
-#### Day 04: Database Connection Management, Session Pooling, and Schema Introspection — ⚪ Planned
+#### Day 04: Database Connection Management, Session Pooling, and Schema Introspection — ✅ Completed
 - **Description:** Implement robust database session management and automatic schema reflection extracting table names, columns, and data types.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-03`
 - **Acceptance Criteria:**
-  - [ ] Thread-safe engine pool with read-only execution session factory
-  - [ ] Schema introspector extracts tables, columns, foreign keys, and sample distinct values
-  - [ ] Tests verify schema reflection accurately matches database catalog
+  - [x] Thread-safe engine pool with read-only execution session factory
+  - [x] Schema introspector extracts tables, columns, foreign keys, and sample distinct values
+  - [x] Tests verify schema reflection accurately matches database catalog
 - **Key Deliverables:**
   - `src/db/connection.py`
   - `src/db/introspector.py`
