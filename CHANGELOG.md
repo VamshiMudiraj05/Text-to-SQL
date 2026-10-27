@@ -18,3 +18,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `0f299c67`
 - **Summary:** Add comprehensive health check endpoints, configuration sanity checks, and automated baseline pytest suite.
+
+### Day 06 — LLM Provider Interface and Structured Response Schemas (2026-10-27)
+
+- **Commit:** `21d7f944`
+- **Summary:** Implement pluggable LLM provider abstraction supporting Gemini and OpenAI with structured JSON response schemas.
