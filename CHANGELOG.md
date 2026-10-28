@@ -23,3 +23,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `21d7f944`
 - **Summary:** Implement pluggable LLM provider abstraction supporting Gemini and OpenAI with structured JSON response schemas.
+
+### Day 07 — Schema-Aware SQL Generation Engine (2026-10-28)
+
+- **Commit:** `4ffe2db4`
+- **Summary:** Build prompt synthesis pipeline injecting introspected database schema, foreign keys, and constraints into LLM context.
