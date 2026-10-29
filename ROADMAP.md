@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 7/30 Days Completed (23.3%)
+> **Overall Progress:** 8/30 Days Completed (26.7%)
 
 ## 📊 Progress Overview
 
@@ -95,7 +95,7 @@
   - `src/llm/schemas.py`
   - `tests/test_llm_provider.py`
 
-#### Day 07: Schema-Aware SQL Generation Engine — ✅ Completed
+#### Day 07: Schema-Aware SQL Generation Engine — ✅ Completed (`ecf093e`)
 - **Description:** Build prompt synthesis pipeline injecting introspected database schema, foreign keys, and constraints into LLM context.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-06`
 - **Acceptance Criteria:**
@@ -106,13 +106,13 @@
   - `src/engine/sql_generator.py`
   - `tests/test_sql_generator.py`
 
-#### Day 08: SQL Parsing, Read-Only Query Validation, and Query Limits — ⚪ Planned
+#### Day 08: SQL Parsing, Read-Only Query Validation, and Query Limits — ✅ Completed
 - **Description:** Implement strict AST-based SQL validator enforcing read-only SELECT/CTE queries and blocking DDL/DML.
 - **Complexity:** `High` | **Dependencies:** `task-day-07`
 - **Acceptance Criteria:**
-  - [ ] SQL AST parser rejects INSERT, UPDATE, DELETE, DROP, ALTER, TRUNCATE
-  - [ ] Blocks stacked queries, dangerous functions, and unauthorized system tables
-  - [ ] Enforces statement limit (LIMIT 100) and query complexity checks
+  - [x] SQL AST parser rejects INSERT, UPDATE, DELETE, DROP, ALTER, TRUNCATE
+  - [x] Blocks stacked queries, dangerous functions, and unauthorized system tables
+  - [x] Enforces statement limit (LIMIT 100) and query complexity checks
 - **Key Deliverables:**
   - `src/security/sql_guard.py`
   - `tests/test_sql_guard.py`
