@@ -28,3 +28,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `4ffe2db4`
 - **Summary:** Build prompt synthesis pipeline injecting introspected database schema, foreign keys, and constraints into LLM context.
+
+### Day 08 — SQL Parsing, Read-Only Query Validation, and Query Limits (2026-10-29)
+
+- **Commit:** `183c4c97`
+- **Summary:** Implement strict AST-based SQL validator enforcing read-only SELECT/CTE queries and blocking DDL/DML.
