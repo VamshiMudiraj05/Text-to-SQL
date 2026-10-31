@@ -38,3 +38,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `fc94e8c1`
 - **Summary:** Execute validated queries under statement timeouts, serialize results to JSON tables, and compute column metadata.
+
+### Day 10 — Test Clear Questions, Invalid Queries, and Unsupported Requests (2026-10-31)
+
+- **Commit:** `648cb808`
+- **Summary:** Build rigorous test suite covering unambiguous questions, syntactic errors, and out-of-domain requests.
