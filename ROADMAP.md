@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 9/30 Days Completed (30.0%)
+> **Overall Progress:** 10/30 Days Completed (33.3%)
 
 ## 📊 Progress Overview
 
@@ -117,7 +117,7 @@
   - `src/security/sql_guard.py`
   - `tests/test_sql_guard.py`
 
-#### Day 09: Safe Query Execution Engine and Tabular Result Serialization — ✅ Completed
+#### Day 09: Safe Query Execution Engine and Tabular Result Serialization — ✅ Completed (`a321230`)
 - **Description:** Execute validated queries under statement timeouts, serialize results to JSON tables, and compute column metadata.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-08`
 - **Acceptance Criteria:**
@@ -128,13 +128,13 @@
   - `src/engine/query_executor.py`
   - `tests/test_query_executor.py`
 
-#### Day 10: Test Clear Questions, Invalid Queries, and Unsupported Requests — ⚪ Planned
+#### Day 10: Test Clear Questions, Invalid Queries, and Unsupported Requests — ✅ Completed
 - **Description:** Build rigorous test suite covering unambiguous questions, syntactic errors, and out-of-domain requests.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-09`
 - **Acceptance Criteria:**
-  - [ ] End-to-end tests for simple and aggregated clear questions (e.g. 'total sales in 2024')
-  - [ ] Tests verifying rejection of malicious queries like 'DROP TABLE customers'
-  - [ ] Negative tests handling unsupported queries with graceful error responses
+  - [x] End-to-end tests for simple and aggregated clear questions (e.g. 'total sales in 2024')
+  - [x] Tests verifying rejection of malicious queries like 'DROP TABLE customers'
+  - [x] Negative tests handling unsupported queries with graceful error responses
 - **Key Deliverables:**
   - `tests/test_clear_questions.py`
   - `tests/test_security_rejection.py`
