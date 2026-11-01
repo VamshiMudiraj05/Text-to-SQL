@@ -43,3 +43,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `648cb808`
 - **Summary:** Build rigorous test suite covering unambiguous questions, syntactic errors, and out-of-domain requests.
+
+### Day 11 — Ambiguity Detection and Clarification-State Models (2026-11-01)
+
+- **Commit:** `757b863f`
+- **Summary:** Implement ambiguity analyzer detecting underspecified metrics, missing time ranges, or multiple ranking criteria.
