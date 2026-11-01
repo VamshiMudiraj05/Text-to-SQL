@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 10/30 Days Completed (33.3%)
+> **Overall Progress:** 11/30 Days Completed (36.7%)
 
 ## 📊 Progress Overview
 
@@ -128,7 +128,7 @@
   - `src/engine/query_executor.py`
   - `tests/test_query_executor.py`
 
-#### Day 10: Test Clear Questions, Invalid Queries, and Unsupported Requests — ✅ Completed
+#### Day 10: Test Clear Questions, Invalid Queries, and Unsupported Requests — ✅ Completed (`25f0b09`)
 - **Description:** Build rigorous test suite covering unambiguous questions, syntactic errors, and out-of-domain requests.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-09`
 - **Acceptance Criteria:**
@@ -139,13 +139,13 @@
   - `tests/test_clear_questions.py`
   - `tests/test_security_rejection.py`
 
-#### Day 11: Ambiguity Detection and Clarification-State Models — ⚪ Planned
+#### Day 11: Ambiguity Detection and Clarification-State Models — ✅ Completed
 - **Description:** Implement ambiguity analyzer detecting underspecified metrics, missing time ranges, or multiple ranking criteria.
 - **Complexity:** `High` | **Dependencies:** `task-day-10`
 - **Acceptance Criteria:**
-  - [ ] Ambiguity classifier determining if question requires user clarification
-  - [ ] Identifies specific ambiguity type: ranking criteria, date range, entity filter
-  - [ ] Tests verify clear questions are not unnecessarily flagged as ambiguous
+  - [x] Ambiguity classifier determining if question requires user clarification
+  - [x] Identifies specific ambiguity type: ranking criteria, date range, entity filter
+  - [x] Tests verify clear questions are not unnecessarily flagged as ambiguous
 - **Key Deliverables:**
   - `src/engine/ambiguity_detector.py`
   - `tests/test_ambiguity_detector.py`
