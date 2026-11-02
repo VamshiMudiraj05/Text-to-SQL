@@ -48,3 +48,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `757b863f`
 - **Summary:** Implement ambiguity analyzer detecting underspecified metrics, missing time ranges, or multiple ranking criteria.
+
+### Day 12 — Targeted Clarification Question Generator with Selectable Options (2026-11-02)
+
+- **Commit:** `84cd5ab9`
+- **Summary:** Generate one concise, targeted clarification question with 2-4 distinct selectable options when ambiguity is detected.
