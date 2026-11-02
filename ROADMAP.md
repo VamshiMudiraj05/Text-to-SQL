@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 11/30 Days Completed (36.7%)
+> **Overall Progress:** 12/30 Days Completed (40.0%)
 
 ## 📊 Progress Overview
 
@@ -139,7 +139,7 @@
   - `tests/test_clear_questions.py`
   - `tests/test_security_rejection.py`
 
-#### Day 11: Ambiguity Detection and Clarification-State Models — ✅ Completed
+#### Day 11: Ambiguity Detection and Clarification-State Models — ✅ Completed (`85ede40`)
 - **Description:** Implement ambiguity analyzer detecting underspecified metrics, missing time ranges, or multiple ranking criteria.
 - **Complexity:** `High` | **Dependencies:** `task-day-10`
 - **Acceptance Criteria:**
@@ -150,13 +150,13 @@
   - `src/engine/ambiguity_detector.py`
   - `tests/test_ambiguity_detector.py`
 
-#### Day 12: Targeted Clarification Question Generator with Selectable Options — ⚪ Planned
+#### Day 12: Targeted Clarification Question Generator with Selectable Options — ✅ Completed
 - **Description:** Generate one concise, targeted clarification question with 2-4 distinct selectable options when ambiguity is detected.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-11`
 - **Acceptance Criteria:**
-  - [ ] Clarification generator outputs clear question and structured choice options
-  - [ ] Example: 'Show top customers' -> choices: Total Spending, Order Count, Recent Activity
-  - [ ] Tests confirm concise wording and mutually exclusive options
+  - [x] Clarification generator outputs clear question and structured choice options
+  - [x] Example: 'Show top customers' -> choices: Total Spending, Order Count, Recent Activity
+  - [x] Tests confirm concise wording and mutually exclusive options
 - **Key Deliverables:**
   - `src/engine/clarification_generator.py`
   - `tests/test_clarification_generator.py`
