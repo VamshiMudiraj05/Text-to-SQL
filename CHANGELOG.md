@@ -53,3 +53,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `84cd5ab9`
 - **Summary:** Generate one concise, targeted clarification question with 2-4 distinct selectable options when ambiguity is detected.
+
+### Day 13 — Conversation State Manager Preserving Clarification Turns (2026-11-03)
+
+- **Commit:** `5d3f0a87`
+- **Summary:** Build stateful conversation store preserving original user question, detected ambiguities, and user answers.
