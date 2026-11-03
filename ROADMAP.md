@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 12/30 Days Completed (40.0%)
+> **Overall Progress:** 13/30 Days Completed (43.3%)
 
 ## 📊 Progress Overview
 
@@ -150,7 +150,7 @@
   - `src/engine/ambiguity_detector.py`
   - `tests/test_ambiguity_detector.py`
 
-#### Day 12: Targeted Clarification Question Generator with Selectable Options — ✅ Completed
+#### Day 12: Targeted Clarification Question Generator with Selectable Options — ✅ Completed (`284b17a`)
 - **Description:** Generate one concise, targeted clarification question with 2-4 distinct selectable options when ambiguity is detected.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-11`
 - **Acceptance Criteria:**
@@ -163,13 +163,13 @@
 
 ### Phase 3: Clarification & State
 
-#### Day 13: Conversation State Manager Preserving Clarification Turns — ⚪ Planned
+#### Day 13: Conversation State Manager Preserving Clarification Turns — ✅ Completed
 - **Description:** Build stateful conversation store preserving original user question, detected ambiguities, and user answers.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-12`
 - **Acceptance Criteria:**
-  - [ ] Session state store caching multi-turn dialogue history with TTL cleanup
-  - [ ] ConversationTurn model linking question, clarification options, and selection
-  - [ ] Integration tests verifying conversation state persistence across turns
+  - [x] Session state store caching multi-turn dialogue history with TTL cleanup
+  - [x] ConversationTurn model linking question, clarification options, and selection
+  - [x] Integration tests verifying conversation state persistence across turns
 - **Key Deliverables:**
   - `src/engine/conversation.py`
   - `tests/test_conversation.py`
