@@ -58,3 +58,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `5d3f0a87`
 - **Summary:** Build stateful conversation store preserving original user question, detected ambiguities, and user answers.
+
+### Day 14 — Clarification-Informed SQL Regeneration (2026-11-04)
+
+- **Commit:** `9ebc1085`
+- **Summary:** Incorporate user clarification choice into the SQL generator prompt to produce accurate, tailored queries.
