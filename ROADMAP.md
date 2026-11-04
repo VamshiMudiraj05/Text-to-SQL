@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 13/30 Days Completed (43.3%)
+> **Overall Progress:** 14/30 Days Completed (46.7%)
 
 ## 📊 Progress Overview
 
@@ -163,7 +163,7 @@
 
 ### Phase 3: Clarification & State
 
-#### Day 13: Conversation State Manager Preserving Clarification Turns — ✅ Completed
+#### Day 13: Conversation State Manager Preserving Clarification Turns — ✅ Completed (`636ea5e`)
 - **Description:** Build stateful conversation store preserving original user question, detected ambiguities, and user answers.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-12`
 - **Acceptance Criteria:**
@@ -174,13 +174,13 @@
   - `src/engine/conversation.py`
   - `tests/test_conversation.py`
 
-#### Day 14: Clarification-Informed SQL Regeneration — ⚪ Planned
+#### Day 14: Clarification-Informed SQL Regeneration — ✅ Completed
 - **Description:** Incorporate user clarification choice into the SQL generator prompt to produce accurate, tailored queries.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-13`
 - **Acceptance Criteria:**
-  - [ ] Prompt pipeline augments schema and original question with selected clarification
-  - [ ] Generates refined SQL directly matching the clarified user intent
-  - [ ] Tests verify generated SQL reflects the clarified metric (e.g. SUM(total_amount))
+  - [x] Prompt pipeline augments schema and original question with selected clarification
+  - [x] Generates refined SQL directly matching the clarified user intent
+  - [x] Tests verify generated SQL reflects the clarified metric (e.g. SUM(total_amount))
 - **Key Deliverables:**
   - `src/engine/sql_regenerator.py`
   - `tests/test_sql_regenerator.py`
