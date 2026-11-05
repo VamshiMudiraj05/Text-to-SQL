@@ -63,3 +63,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `9ebc1085`
 - **Summary:** Incorporate user clarification choice into the SQL generator prompt to produce accurate, tailored queries.
+
+### Day 15 — Test Suite for Ambiguous, Underspecified, and Clear Questions (2026-11-05)
+
+- **Commit:** `92b56edc`
+- **Summary:** Comprehensive automated test matrix asserting correct routing between direct execution and clarification flow.
