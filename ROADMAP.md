@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 14/30 Days Completed (46.7%)
+> **Overall Progress:** 15/30 Days Completed (50.0%)
 
 ## 📊 Progress Overview
 
@@ -174,7 +174,7 @@
   - `src/engine/conversation.py`
   - `tests/test_conversation.py`
 
-#### Day 14: Clarification-Informed SQL Regeneration — ✅ Completed
+#### Day 14: Clarification-Informed SQL Regeneration — ✅ Completed (`9a6e2b9`)
 - **Description:** Incorporate user clarification choice into the SQL generator prompt to produce accurate, tailored queries.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-13`
 - **Acceptance Criteria:**
@@ -185,13 +185,13 @@
   - `src/engine/sql_regenerator.py`
   - `tests/test_sql_regenerator.py`
 
-#### Day 15: Test Suite for Ambiguous, Underspecified, and Clear Questions — ⚪ Planned
+#### Day 15: Test Suite for Ambiguous, Underspecified, and Clear Questions — ✅ Completed
 - **Description:** Comprehensive automated test matrix asserting correct routing between direct execution and clarification flow.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-14`
 - **Acceptance Criteria:**
-  - [ ] Tests asserting clarification triggers on underspecified ranking requests
-  - [ ] Tests asserting direct execution on fully specified date-filtered queries
-  - [ ] Verification that default assumptions are explicitly documented when no clarification is needed
+  - [x] Tests asserting clarification triggers on underspecified ranking requests
+  - [x] Tests asserting direct execution on fully specified date-filtered queries
+  - [x] Verification that default assumptions are explicitly documented when no clarification is needed
 - **Key Deliverables:**
   - `tests/test_clarification_workflow.py`
 
