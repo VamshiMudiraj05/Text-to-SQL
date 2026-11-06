@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 15/30 Days Completed (50.0%)
+> **Overall Progress:** 16/30 Days Completed (53.3%)
 
 ## 📊 Progress Overview
 
@@ -185,7 +185,7 @@
   - `src/engine/sql_regenerator.py`
   - `tests/test_sql_regenerator.py`
 
-#### Day 15: Test Suite for Ambiguous, Underspecified, and Clear Questions — ✅ Completed
+#### Day 15: Test Suite for Ambiguous, Underspecified, and Clear Questions — ✅ Completed (`255c996`)
 - **Description:** Comprehensive automated test matrix asserting correct routing between direct execution and clarification flow.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-14`
 - **Acceptance Criteria:**
@@ -195,13 +195,13 @@
 - **Key Deliverables:**
   - `tests/test_clarification_workflow.py`
 
-#### Day 16: React Chat Interface and Question Submission Workflow — ⚪ Planned
+#### Day 16: React Chat Interface and Question Submission Workflow — ✅ Completed
 - **Description:** Build modern, responsive React chat interface with Tailwind CSS for natural language question input.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-15`
 - **Acceptance Criteria:**
-  - [ ] Clean chat message timeline supporting user questions and assistant responses
-  - [ ] Input box with auto-focus, send button, and keyboard shortcut (Enter)
-  - [ ] Component tests asserting input handling and loading state transitions
+  - [x] Clean chat message timeline supporting user questions and assistant responses
+  - [x] Input box with auto-focus, send button, and keyboard shortcut (Enter)
+  - [x] Component tests asserting input handling and loading state transitions
 - **Key Deliverables:**
   - `frontend/src/components/ChatTimeline.tsx`
   - `frontend/src/components/QuestionInput.tsx`
