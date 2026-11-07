@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 16/30 Days Completed (53.3%)
+> **Overall Progress:** 17/30 Days Completed (56.7%)
 
 ## 📊 Progress Overview
 
@@ -195,7 +195,7 @@
 - **Key Deliverables:**
   - `tests/test_clarification_workflow.py`
 
-#### Day 16: React Chat Interface and Question Submission Workflow — ✅ Completed
+#### Day 16: React Chat Interface and Question Submission Workflow — ✅ Completed (`67b661d`)
 - **Description:** Build modern, responsive React chat interface with Tailwind CSS for natural language question input.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-15`
 - **Acceptance Criteria:**
@@ -206,13 +206,13 @@
   - `frontend/src/components/ChatTimeline.tsx`
   - `frontend/src/components/QuestionInput.tsx`
 
-#### Day 17: Interactive Clarification Option Controls and Turn History — ⚪ Planned
+#### Day 17: Interactive Clarification Option Controls and Turn History — ✅ Completed
 - **Description:** Render clickable clarification option buttons within the chat stream allowing 1-click option selection.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-16`
 - **Acceptance Criteria:**
-  - [ ] ClarificationCard component rendering option pills/buttons for user selection
-  - [ ] Disables choices once answered and updates conversation timeline seamlessly
-  - [ ] Frontend interaction tests verifying choice submission callback
+  - [x] ClarificationCard component rendering option pills/buttons for user selection
+  - [x] Disables choices once answered and updates conversation timeline seamlessly
+  - [x] Frontend interaction tests verifying choice submission callback
 - **Key Deliverables:**
   - `frontend/src/components/ClarificationCard.tsx`
   - `frontend/src/components/HistorySidebar.tsx`
