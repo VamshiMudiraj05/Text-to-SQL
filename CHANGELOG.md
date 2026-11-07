@@ -73,3 +73,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `2c8fc4c8`
 - **Summary:** Build modern, responsive React chat interface with Tailwind CSS for natural language question input.
+
+### Day 17 — Interactive Clarification Option Controls and Turn History (2026-11-07)
+
+- **Commit:** `7b5e7b23`
+- **Summary:** Render clickable clarification option buttons within the chat stream allowing 1-click option selection.
