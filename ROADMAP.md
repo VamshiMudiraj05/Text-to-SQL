@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 17/30 Days Completed (56.7%)
+> **Overall Progress:** 18/30 Days Completed (60.0%)
 
 ## 📊 Progress Overview
 
@@ -206,7 +206,7 @@
   - `frontend/src/components/ChatTimeline.tsx`
   - `frontend/src/components/QuestionInput.tsx`
 
-#### Day 17: Interactive Clarification Option Controls and Turn History — ✅ Completed
+#### Day 17: Interactive Clarification Option Controls and Turn History — ✅ Completed (`3a048f9`)
 - **Description:** Render clickable clarification option buttons within the chat stream allowing 1-click option selection.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-16`
 - **Acceptance Criteria:**
@@ -217,13 +217,13 @@
   - `frontend/src/components/ClarificationCard.tsx`
   - `frontend/src/components/HistorySidebar.tsx`
 
-#### Day 18: SQL Preview Modal, Plain-English Explanations, and Tabular Results — ⚪ Planned
+#### Day 18: SQL Preview Modal, Plain-English Explanations, and Tabular Results — ✅ Completed
 - **Description:** Display formatted SQL preview with syntax highlighting, plain-English explanation, and interactive data table.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-17`
 - **Acceptance Criteria:**
-  - [ ] SqlPreview component with copy-to-clipboard and syntax highlighting
-  - [ ] QueryExplanation card detailing why the query was constructed that way
-  - [ ] ResultTable component with pagination, sortable columns, and row counts
+  - [x] SqlPreview component with copy-to-clipboard and syntax highlighting
+  - [x] QueryExplanation card detailing why the query was constructed that way
+  - [x] ResultTable component with pagination, sortable columns, and row counts
 - **Key Deliverables:**
   - `frontend/src/components/SqlPreview.tsx`
   - `frontend/src/components/ResultTable.tsx`
