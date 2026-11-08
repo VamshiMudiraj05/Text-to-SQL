@@ -78,3 +78,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `7b5e7b23`
 - **Summary:** Render clickable clarification option buttons within the chat stream allowing 1-click option selection.
+
+### Day 18 — SQL Preview Modal, Plain-English Explanations, and Tabular Results (2026-11-08)
+
+- **Commit:** `b376f038`
+- **Summary:** Display formatted SQL preview with syntax highlighting, plain-English explanation, and interactive data table.
