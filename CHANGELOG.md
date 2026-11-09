@@ -83,3 +83,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `b376f038`
 - **Summary:** Display formatted SQL preview with syntax highlighting, plain-English explanation, and interactive data table.
+
+### Day 19 — Responsive UI Polish, Skeleton Loading States, and Error Banners (2026-11-09)
+
+- **Commit:** `3c4d8dde`
+- **Summary:** Implement polished dark-mode styling, loading skeletons during SQL execution, and actionable error toasts.
