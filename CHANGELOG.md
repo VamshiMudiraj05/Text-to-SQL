@@ -88,3 +88,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `3c4d8dde`
 - **Summary:** Implement polished dark-mode styling, loading skeletons during SQL execution, and actionable error toasts.
+
+### Day 20 — Full Frontend-Backend API Integration and User Journey Test (2026-11-10)
+
+- **Commit:** `2ceb2115`
+- **Summary:** Connect React frontend with FastAPI backend endpoints over HTTP and test complete clarification journey.
