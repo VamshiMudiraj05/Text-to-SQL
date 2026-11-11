@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 20/30 Days Completed (66.7%)
+> **Overall Progress:** 21/30 Days Completed (70.0%)
 
 ## 📊 Progress Overview
 
@@ -241,7 +241,7 @@
 
 ### Phase 4: Evaluation, Hardening & Integration
 
-#### Day 20: Full Frontend-Backend API Integration and User Journey Test — ✅ Completed
+#### Day 20: Full Frontend-Backend API Integration and User Journey Test — ✅ Completed (`a53f0fa`)
 - **Description:** Connect React frontend with FastAPI backend endpoints over HTTP and test complete clarification journey.
 - **Complexity:** `High` | **Dependencies:** `task-day-19`
 - **Acceptance Criteria:**
@@ -252,13 +252,13 @@
   - `src/api/routes.py`
   - `tests/test_api_integration.py`
 
-#### Day 21: Representative Text-to-SQL Benchmark Dataset — ⚪ Planned
+#### Day 21: Representative Text-to-SQL Benchmark Dataset — ✅ Completed
 - **Description:** Curate benchmark suite of 50 diverse e-commerce questions across simple, multi-join, ambiguous, and edge cases.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-20`
 - **Acceptance Criteria:**
-  - [ ] Benchmark dataset JSON containing questions, expected tables, and golden SQL
-  - [ ] Categories covering simple lookups, aggregations, multi-table joins, and ambiguous prompts
-  - [ ] Automated dataset loader and test runner
+  - [x] Benchmark dataset JSON containing questions, expected tables, and golden SQL
+  - [x] Categories covering simple lookups, aggregations, multi-table joins, and ambiguous prompts
+  - [x] Automated dataset loader and test runner
 - **Key Deliverables:**
   - `benchmarks/dataset.json`
   - `benchmarks/evaluator.py`
