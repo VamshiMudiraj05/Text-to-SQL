@@ -93,3 +93,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `2ceb2115`
 - **Summary:** Connect React frontend with FastAPI backend endpoints over HTTP and test complete clarification journey.
+
+### Day 21 — Representative Text-to-SQL Benchmark Dataset (2026-11-11)
+
+- **Commit:** `beb6ca5e`
+- **Summary:** Curate benchmark suite of 50 diverse e-commerce questions across simple, multi-join, ambiguous, and edge cases.
