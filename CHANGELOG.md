@@ -98,3 +98,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `beb6ca5e`
 - **Summary:** Curate benchmark suite of 50 diverse e-commerce questions across simple, multi-join, ambiguous, and edge cases.
+
+### Day 22 — Execution Accuracy and Clarification Effectiveness Measurement (2026-11-12)
+
+- **Commit:** `e41ea947`
+- **Summary:** Run automated evaluation computing exact-match accuracy, execution accuracy, and ambiguity recall.
