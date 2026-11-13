@@ -103,3 +103,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `e41ea947`
 - **Summary:** Run automated evaluation computing exact-match accuracy, execution accuracy, and ambiguity recall.
+
+### Day 23 — Prompt Engineering Improvements and Failure Analysis (2026-11-13)
+
+- **Commit:** `c25a5894`
+- **Summary:** Analyze failed benchmark questions to refine schema prompts, few-shot examples, and ambiguity triggers.
