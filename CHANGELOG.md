@@ -108,3 +108,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `c25a5894`
 - **Summary:** Analyze failed benchmark questions to refine schema prompts, few-shot examples, and ambiguity triggers.
+
+### Day 24 — Database Security Audit, Parameterization, and Vulnerability Scan (2026-11-14)
+
+- **Commit:** `1cc90e92`
+- **Summary:** Audit SQL security rules, enforce parameterized execution for literals, and run dependency audit.
