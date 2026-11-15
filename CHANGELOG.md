@@ -113,3 +113,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `1cc90e92`
 - **Summary:** Audit SQL security rules, enforce parameterized execution for literals, and run dependency audit.
+
+### Day 25 — Full Regression Testing and Defect Resolution (2026-11-15)
+
+- **Commit:** `ee76d051`
+- **Summary:** Execute full regression test suite across backend API, database engine, guardrails, and frontend mocks.
