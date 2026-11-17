@@ -123,3 +123,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `792ed5e7`
 - **Summary:** Configure production environment profiles, database connection pooling, and Gunicorn/Uvicorn workers.
+
+### Day 27 — Containerization: Multi-Stage Dockerfile & Docker Compose Pipeline (2026-11-17)
+
+- **Commit:** `ce85f724`
+- **Summary:** Create multi-stage Dockerfile packaging FastAPI backend, React build, and PostgreSQL database service.
