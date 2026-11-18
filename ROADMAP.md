@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 27/30 Days Completed (90.0%)
+> **Overall Progress:** 28/30 Days Completed (93.3%)
 
 ## 📊 Progress Overview
 
@@ -320,7 +320,7 @@
   - `src/core/prod_config.py`
   - `tests/test_prod_config.py`
 
-#### Day 27: Containerization: Multi-Stage Dockerfile & Docker Compose Pipeline — ✅ Completed
+#### Day 27: Containerization: Multi-Stage Dockerfile & Docker Compose Pipeline — ✅ Completed (`a2bd180`)
 - **Description:** Create multi-stage Dockerfile packaging FastAPI backend, React build, and PostgreSQL database service.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-26`
 - **Acceptance Criteria:**
@@ -332,13 +332,13 @@
   - `docker-compose.yml`
   - `.dockerignore`
 
-#### Day 28: End-to-End Production Smoke Testing in Sandbox — ⚪ Planned
+#### Day 28: End-to-End Production Smoke Testing in Sandbox — ✅ Completed
 - **Description:** Deploy containerized ClarifySQL stack in isolated sandbox and execute comprehensive smoke test suite.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-27`
 - **Acceptance Criteria:**
-  - [ ] Automated smoke test exercises natural language question, clarification, SQL execution, and table output
-  - [ ] Verifies read-only permission isolation on production database account
-  - [ ] Sandbox health verification passes without warnings
+  - [x] Automated smoke test exercises natural language question, clarification, SQL execution, and table output
+  - [x] Verifies read-only permission isolation on production database account
+  - [x] Sandbox health verification passes without warnings
 - **Key Deliverables:**
   - `scripts/smoke_test.py`
   - `tests/test_smoke.py`
