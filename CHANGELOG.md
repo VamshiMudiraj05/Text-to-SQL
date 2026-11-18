@@ -128,3 +128,8 @@ All notable daily development milestones and changes are documented here.
 
 - **Commit:** `ce85f724`
 - **Summary:** Create multi-stage Dockerfile packaging FastAPI backend, React build, and PostgreSQL database service.
+
+### Day 28 — End-to-End Production Smoke Testing in Sandbox (2026-11-18)
+
+- **Commit:** `09ecf671`
+- **Summary:** Deploy containerized ClarifySQL stack in isolated sandbox and execute comprehensive smoke test suite.
