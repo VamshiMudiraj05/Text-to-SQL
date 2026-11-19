@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 28/30 Days Completed (93.3%)
+> **Overall Progress:** 29/30 Days Completed (96.7%)
 
 ## 📊 Progress Overview
 
@@ -332,7 +332,7 @@
   - `docker-compose.yml`
   - `.dockerignore`
 
-#### Day 28: End-to-End Production Smoke Testing in Sandbox — ✅ Completed
+#### Day 28: End-to-End Production Smoke Testing in Sandbox — ✅ Completed (`61f7188`)
 - **Description:** Deploy containerized ClarifySQL stack in isolated sandbox and execute comprehensive smoke test suite.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-27`
 - **Acceptance Criteria:**
@@ -343,13 +343,13 @@
   - `scripts/smoke_test.py`
   - `tests/test_smoke.py`
 
-#### Day 29: Comprehensive Developer Guide, Architecture Specs, and Interactive Demo Guide — ⚪ Planned
+#### Day 29: Comprehensive Developer Guide, Architecture Specs, and Interactive Demo Guide — ✅ Completed
 - **Description:** Author complete technical documentation, architecture diagrams, API reference, and demo walk-throughs.
 - **Complexity:** `Low` | **Dependencies:** `task-day-28`
 - **Acceptance Criteria:**
-  - [ ] Comprehensive README.md with system architecture diagram and feature highlights
-  - [ ] API documentation covering all REST endpoints with curl examples
-  - [ ] Interactive demo guide with sample ambiguous and clear questions to try
+  - [x] Comprehensive README.md with system architecture diagram and feature highlights
+  - [x] API documentation covering all REST endpoints with curl examples
+  - [x] Interactive demo guide with sample ambiguous and clear questions to try
 - **Key Deliverables:**
   - `README.md`
   - `docs/api_reference.md`
