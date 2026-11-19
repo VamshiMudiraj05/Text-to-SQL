@@ -1,29 +1,11 @@
-# ClarifySQL: Text-to-SQL with an Ambiguity Clarification Engine
+# Documentation: Comprehensive Developer Guide, Architecture Specs, and Interactive Demo Guide
 
-> **Autonomous 30-Day Project** | Built daily by [Autonomous Project Agent](https://github.com/VamshiMudiraj05/Github-Automation)
+**Milestone Day:** 29
 
-ClarifySQL is a production-minded application that converts natural-language questions into accurate SQL queries, detects conversational and schema ambiguity, prompts users with targeted clarification options, validates generated SQL for read-only safety, and executes queries against PostgreSQL.
+## Overview
+Author complete technical documentation, architecture diagrams, API reference, and demo walk-throughs.
 
----
-
-## 🏗️ Architecture & Planning Deliverables
-
-- [30-Day Master Roadmap](ROADMAP.md)
-- [Daily Progress & Execution Tracker](PROGRESS.md)
-- [System Architecture](docs/architecture.md)
-- [Requirements & Acceptance Criteria](docs/requirements.md)
-- [Synthetic Database Domain Schema](docs/domain_schema.md)
-
----
-
-## 🛠️ Technology Stack
-- **Backend**: Python 3.12+, FastAPI, Pydantic, SQLAlchemy/Asyncpg
-- **Database**: PostgreSQL (Orders, Customers, Products, Reviews domain)
-- **Frontend**: React, Tailwind CSS
-- **Testing**: Pytest, Testcontainers/Mock DB
-- **LLM**: Gemini / OpenAI via configurable provider abstraction
-
----
-
-## 📅 Development Progress
-See [PROGRESS.md](PROGRESS.md) for milestone completion history, streaks, and upcoming features.
+## Acceptance Criteria
+- [x] Comprehensive README.md with system architecture diagram and feature highlights
+- [x] API documentation covering all REST endpoints with curl examples
+- [x] Interactive demo guide with sample ambiguous and clear questions to try
