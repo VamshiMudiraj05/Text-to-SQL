@@ -14,3 +14,8 @@ Conduct final acceptance audit against all requirements, tag v1.0.0 release, and
 
 - **Commit:** `c3580589`
 - **Summary:** Conduct final acceptance audit against all requirements, tag v1.0.0 release, and document project achievements.
+
+### Day 31 — SQLite and DuckDB Dialect Adapters and Schema Normalization (2026-11-21)
+
+- **Commit:** `5f78ea08`
+- **Summary:** Implement pluggable dialect adapter interface supporting SQLite and DuckDB alongside PostgreSQL with schema type normalization.
