@@ -19,3 +19,8 @@ Conduct final acceptance audit against all requirements, tag v1.0.0 release, and
 
 - **Commit:** `5f78ea08`
 - **Summary:** Implement pluggable dialect adapter interface supporting SQLite and DuckDB alongside PostgreSQL with schema type normalization.
+
+### Day 32 — MySQL Dialect Specialization and Dialect-Specific AST Validation (2026-11-22)
+
+- **Commit:** `2523a100`
+- **Summary:** Add MySQL 8.0+ dialect support and configure sqlglot parser rules for dialect-specific syntax quirks and reserved words.
