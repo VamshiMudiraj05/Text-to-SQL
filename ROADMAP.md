@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 33/90 Days Completed (36.7%)
+> **Overall Progress:** 34/90 Days Completed (37.8%)
 
 ## 📊 Progress Overview
 
@@ -397,7 +397,7 @@
   - `src/security/dialect_guard.py`
   - `tests/test_dialect_guard.py`
 
-#### Day 33: Multi-Database Connection Router and Dynamic Pool Manager — ✅ Completed
+#### Day 33: Multi-Database Connection Router and Dynamic Pool Manager — ✅ Completed (`a0ed997`)
 - **Description:** Build connection router allowing queries to execute across configured SQLite, PostgreSQL, or MySQL data sources dynamically.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-32`
 - **Acceptance Criteria:**
@@ -408,13 +408,13 @@
   - `src/db/router.py`
   - `tests/test_db_router.py`
 
-#### Day 34: Analytical Window Functions and Ranking SQL Generation — ⚪ Planned
+#### Day 34: Analytical Window Functions and Ranking SQL Generation — ✅ Completed
 - **Description:** Extend SQL generation prompt and few-shot examples to support window functions: ROW_NUMBER, RANK, DENSE_RANK, and OVER clauses.
 - **Complexity:** `High` | **Dependencies:** `task-day-33`
 - **Acceptance Criteria:**
-  - [ ] Few-shot window function prompt templates for ranking and partition queries
-  - [ ] Validator rules ensuring window functions execute safely without unbounded memory
-  - [ ] Tests verifying natural queries like 'rank top products by category' generate valid SQL
+  - [x] Few-shot window function prompt templates for ranking and partition queries
+  - [x] Validator rules ensuring window functions execute safely without unbounded memory
+  - [x] Tests verifying natural queries like 'rank top products by category' generate valid SQL
 - **Key Deliverables:**
   - `src/engine/window_functions.py`
   - `tests/test_window_functions.py`
