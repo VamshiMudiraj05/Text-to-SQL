@@ -29,3 +29,8 @@ Conduct final acceptance audit against all requirements, tag v1.0.0 release, and
 
 - **Commit:** `21d8c53d`
 - **Summary:** Build connection router allowing queries to execute across configured SQLite, PostgreSQL, or MySQL data sources dynamically.
+
+### Day 34 — Analytical Window Functions and Ranking SQL Generation (2026-11-24)
+
+- **Commit:** `7ec297c1`
+- **Summary:** Extend SQL generation prompt and few-shot examples to support window functions: ROW_NUMBER, RANK, DENSE_RANK, and OVER clauses.
