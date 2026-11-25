@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 34/90 Days Completed (37.8%)
+> **Overall Progress:** 35/90 Days Completed (38.9%)
 
 ## 📊 Progress Overview
 
@@ -408,7 +408,7 @@
   - `src/db/router.py`
   - `tests/test_db_router.py`
 
-#### Day 34: Analytical Window Functions and Ranking SQL Generation — ✅ Completed
+#### Day 34: Analytical Window Functions and Ranking SQL Generation — ✅ Completed (`ac0af98`)
 - **Description:** Extend SQL generation prompt and few-shot examples to support window functions: ROW_NUMBER, RANK, DENSE_RANK, and OVER clauses.
 - **Complexity:** `High` | **Dependencies:** `task-day-33`
 - **Acceptance Criteria:**
@@ -419,13 +419,13 @@
   - `src/engine/window_functions.py`
   - `tests/test_window_functions.py`
 
-#### Day 35: Temporal Analytics: Rolling Averages, Date Truncation, and Intervals — ⚪ Planned
+#### Day 35: Temporal Analytics: Rolling Averages, Date Truncation, and Intervals — ✅ Completed
 - **Description:** Support natural-language temporal queries generating moving averages, date truncations (DATE_TRUNC), and period-over-period comparisons.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-34`
 - **Acceptance Criteria:**
-  - [ ] Temporal prompt module mapping colloquial timeframes ('last quarter', 'year-to-date', '30-day moving average')
-  - [ ] Dialect-aware date arithmetic generator for SQLite, Postgres, and MySQL
-  - [ ] Tests verifying correct date bounds generated for relative time queries
+  - [x] Temporal prompt module mapping colloquial timeframes ('last quarter', 'year-to-date', '30-day moving average')
+  - [x] Dialect-aware date arithmetic generator for SQLite, Postgres, and MySQL
+  - [x] Tests verifying correct date bounds generated for relative time queries
 - **Key Deliverables:**
   - `src/engine/temporal.py`
   - `tests/test_temporal.py`
