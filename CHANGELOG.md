@@ -34,3 +34,8 @@ Conduct final acceptance audit against all requirements, tag v1.0.0 release, and
 
 - **Commit:** `7ec297c1`
 - **Summary:** Extend SQL generation prompt and few-shot examples to support window functions: ROW_NUMBER, RANK, DENSE_RANK, and OVER clauses.
+
+### Day 35 — Temporal Analytics: Rolling Averages, Date Truncation, and Intervals (2026-11-25)
+
+- **Commit:** `dc8eb1db`
+- **Summary:** Support natural-language temporal queries generating moving averages, date truncations (DATE_TRUNC), and period-over-period comparisons.
