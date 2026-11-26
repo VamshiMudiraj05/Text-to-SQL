@@ -39,3 +39,8 @@ Conduct final acceptance audit against all requirements, tag v1.0.0 release, and
 
 - **Commit:** `dc8eb1db`
 - **Summary:** Support natural-language temporal queries generating moving averages, date truncations (DATE_TRUNC), and period-over-period comparisons.
+
+### Day 36 — Query Cost Estimation and EXPLAIN Plan Complexity Analyzer (2026-11-26)
+
+- **Commit:** `174d58c5`
+- **Summary:** Run EXPLAIN queries prior to execution to estimate cost, detect unindexed full table scans, and reject dangerous runaway plans.
