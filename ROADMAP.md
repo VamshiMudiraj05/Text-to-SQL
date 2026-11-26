@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 35/90 Days Completed (38.9%)
+> **Overall Progress:** 36/90 Days Completed (40.0%)
 
 ## 📊 Progress Overview
 
@@ -419,7 +419,7 @@
   - `src/engine/window_functions.py`
   - `tests/test_window_functions.py`
 
-#### Day 35: Temporal Analytics: Rolling Averages, Date Truncation, and Intervals — ✅ Completed
+#### Day 35: Temporal Analytics: Rolling Averages, Date Truncation, and Intervals — ✅ Completed (`3d33686`)
 - **Description:** Support natural-language temporal queries generating moving averages, date truncations (DATE_TRUNC), and period-over-period comparisons.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-34`
 - **Acceptance Criteria:**
@@ -430,13 +430,13 @@
   - `src/engine/temporal.py`
   - `tests/test_temporal.py`
 
-#### Day 36: Query Cost Estimation and EXPLAIN Plan Complexity Analyzer — ⚪ Planned
+#### Day 36: Query Cost Estimation and EXPLAIN Plan Complexity Analyzer — ✅ Completed
 - **Description:** Run EXPLAIN queries prior to execution to estimate cost, detect unindexed full table scans, and reject dangerous runaway plans.
 - **Complexity:** `High` | **Dependencies:** `task-day-35`
 - **Acceptance Criteria:**
-  - [ ] EXPLAIN query planner extracting cost metrics, rows examined, and plan depth
-  - [ ] Cost threshold guardrail rejecting queries exceeding configurable cost limit
-  - [ ] Tests verifying high-cost Cartesian product queries are blocked
+  - [x] EXPLAIN query planner extracting cost metrics, rows examined, and plan depth
+  - [x] Cost threshold guardrail rejecting queries exceeding configurable cost limit
+  - [x] Tests verifying high-cost Cartesian product queries are blocked
 - **Key Deliverables:**
   - `src/security/explain_analyzer.py`
   - `tests/test_explain_analyzer.py`
