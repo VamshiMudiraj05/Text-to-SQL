@@ -2,7 +2,7 @@
 
 > **Project Objective:** A production-minded, portfolio-quality application that converts natural-language questions into accurate SQL queries, detects ambiguity, asks users targeted clarification questions, validates generated SQL, executes safe read-only queries, and presents results in an interactive interface.
 > **Start Date:** 2026-10-24 | **Schedule:** Daily at 06:17 (Asia/Kolkata)
-> **Overall Progress:** 36/90 Days Completed (40.0%)
+> **Overall Progress:** 37/90 Days Completed (41.1%)
 
 ## 📊 Progress Overview
 
@@ -430,7 +430,7 @@
   - `src/engine/temporal.py`
   - `tests/test_temporal.py`
 
-#### Day 36: Query Cost Estimation and EXPLAIN Plan Complexity Analyzer — ✅ Completed
+#### Day 36: Query Cost Estimation and EXPLAIN Plan Complexity Analyzer — ✅ Completed (`e8c1a9b`)
 - **Description:** Run EXPLAIN queries prior to execution to estimate cost, detect unindexed full table scans, and reject dangerous runaway plans.
 - **Complexity:** `High` | **Dependencies:** `task-day-35`
 - **Acceptance Criteria:**
@@ -441,13 +441,13 @@
   - `src/security/explain_analyzer.py`
   - `tests/test_explain_analyzer.py`
 
-#### Day 37: Semantic Schema Tagging and Domain Jargon Synonym Dictionary — ⚪ Planned
+#### Day 37: Semantic Schema Tagging and Domain Jargon Synonym Dictionary — ✅ Completed
 - **Description:** Implement synonym dictionary mapping business terminology ('GMV', 'churned', 'top tier') to actual database columns and formulas.
 - **Complexity:** `Medium` | **Dependencies:** `task-day-36`
 - **Acceptance Criteria:**
-  - [ ] YAML/JSON-driven domain vocabulary registry mapping business concepts to SQL expressions
-  - [ ] Preprocessor injecting business jargon definitions into LLM prompt context
-  - [ ] Tests asserting 'top GMV customers' maps correctly to SUM(orders.total_amount)
+  - [x] YAML/JSON-driven domain vocabulary registry mapping business concepts to SQL expressions
+  - [x] Preprocessor injecting business jargon definitions into LLM prompt context
+  - [x] Tests asserting 'top GMV customers' maps correctly to SUM(orders.total_amount)
 - **Key Deliverables:**
   - `src/engine/synonyms.py`
   - `config/business_synonyms.yaml`
