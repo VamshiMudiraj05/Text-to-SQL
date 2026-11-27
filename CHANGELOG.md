@@ -44,3 +44,8 @@ Conduct final acceptance audit against all requirements, tag v1.0.0 release, and
 
 - **Commit:** `174d58c5`
 - **Summary:** Run EXPLAIN queries prior to execution to estimate cost, detect unindexed full table scans, and reject dangerous runaway plans.
+
+### Day 37 — Semantic Schema Tagging and Domain Jargon Synonym Dictionary (2026-11-27)
+
+- **Commit:** `95e54f6b`
+- **Summary:** Implement synonym dictionary mapping business terminology ('GMV', 'churned', 'top tier') to actual database columns and formulas.
