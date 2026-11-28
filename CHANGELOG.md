@@ -49,3 +49,8 @@ Conduct final acceptance audit against all requirements, tag v1.0.0 release, and
 
 - **Commit:** `95e54f6b`
 - **Summary:** Implement synonym dictionary mapping business terminology ('GMV', 'churned', 'top tier') to actual database columns and formulas.
+
+### Day 38 — Automated Indexing Advisor Based on Query Workloads (2026-11-28)
+
+- **Commit:** `8a528fcd`
+- **Summary:** Analyze generated query workloads to detect missing indexes on frequently filtered or joined columns and provide DDL recommendations.
